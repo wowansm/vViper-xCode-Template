@@ -14,19 +14,22 @@
 	</array>
 	<key>Ancestors</key>
 	<array>
+		<string>com.apple.dt.unit.applicationBase</string>
 		<string>com.apple.dt.unit.iosBase</string>
 	</array>
 	<key>Project</key>
 	<dict>
 		<key>SharedSettings</key>
 		<dict>
-			<key>INFOPLIST_FILE</key>
-			<string>___PACKAGENAME___/👑 Application Layer/Info.plist</string>
+			<key>SWIFT_VERSION</key>
+			<string>5.0</string>
 		</dict>
 	</dict>
 	<key>Targets</key>
 	<array>
 		<dict>
+			<key>TargetIdentifier</key>
+			<string>com.apple.dt.cocoaTouchApplicationTarget</string>
 			<key>BuildPhases</key>
 			<array>
 				<dict>
@@ -37,13 +40,26 @@
 					<key>Class</key>
 					<string>ShellScript</string>
 					<key>ShellScript</key>
-					<string>${SRCROOT}/Pods/SwiftLint/swiftlint --config &quot;${SRCROOT}/.swiftlint.yml&quot;</string>
+					<string># Type a script or drag a script file from your workspace to insert its path.
+if which swiftlint &gt;/dev/null; then
+swiftlint
+else
+echo &quot;warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint&quot;
+fi</string>
 				</dict>
 			</array>
+			<key>SharedSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+			</dict>
 		</dict>
 	</array>
 	<key>Nodes</key>
 	<array>
+		<string>Info.plist:iphone</string>
 		<string>../Podfile:swiftbasics</string>
 		<string>../.swiftlint.yml</string>
 		<string>../.gitignore</string>
@@ -51,7 +67,7 @@
 		<string>👑 Application Layer/AppDefaults.swift</string>
 		<string>👑 Application Layer/AppDelegate.swift</string>
 		<string>👑 Application Layer/Base.lproj/LaunchScreen.storyboard</string>
-		<string>👑 Application Layer/Extensions/.keep</string>
+		<string>👑 Application Layer/Extensions/.gitkeep</string>
 		<string>👑 Application Layer/Localization/en.lproj/Localizable.strings</string>
 		<string>👑 Application Layer/Localization/ru.lproj/Localizable.strings</string>
 		<string>👑 Application Layer/Localization/AppLocalization.swift</string>
@@ -68,15 +84,14 @@
 		<string>👑 Application Layer/Resources/Style/Stylable.swift</string>
 		<string>👑 Application Layer/Resources/Style/StyleWrapper.swift</string>
 		<string>👑 Application Layer/ru.lproj/LaunchScreen.strings</string>
-		<string>👑 Application Layer/Info.plist</string>
-		<string>🧠 Data Layer/Requests/.keep</string>
-		<string>🧠 Data Layer/Responses/.keep</string>
-		<string>🧠 Data Layer/Models/.keep</string>
+		<string>🧠 Data Layer/Requests/.gitkeep</string>
+		<string>🧠 Data Layer/Responses/.gitkeep</string>
+		<string>🧠 Data Layer/Models/.gitkeep</string>
 		<string>🧠 Data Layer/___PACKAGENAME___.xcdatamodeld</string>
 		<string>🧠 Data Layer/___PACKAGENAME___Repository.swift</string>
-		<string>🧩 Domain Layer/.keep</string>
-		<string>🌟 Presentation Layer/Components/Cells/.keep</string>
-		<string>🌟 Presentation Layer/Components/Custom/.keep</string>
+		<string>🧩 Domain Layer/.gitkeep</string>
+		<string>🌟 Presentation Layer/Components/Cells/.gitkeep</string>
+		<string>🌟 Presentation Layer/Components/Custom/.gitkeep</string>
 		<string>🌟 Presentation Layer/Navigation/Navigation Controller/BasicNavigationController.swift</string>
 		<string>🌟 Presentation Layer/User Stories/Initial/InitialAssembly.swift</string>
 		<string>🌟 Presentation Layer/User Stories/Initial/InitialInteractor.swift</string>
@@ -87,10 +102,32 @@
 		<string>🌟 Presentation Layer/User Stories/Initial/InitialViewModel.swift</string>
 		<string>🌟 Presentation Layer/User Stories/Initial/Resources/InitialLocalization.swift</string>
 		<string>🌟 Presentation Layer/User Stories/Initial/Resources/StylyWrapper+Initial.swift</string>
-		<string>🤖 Service Layer/.keep</string>
+		<string>🤖 Service Layer/.gitkeep</string>
 	</array>
 	<key>Definitions</key>
 	<dict>
+		<key>Info.plist:iphone</key>
+		<string>&lt;key&gt;LSRequiresIPhoneOS&lt;/key&gt;
+	&lt;true/&gt;
+	&lt;key&gt;UILaunchStoryboardName&lt;/key&gt;
+	&lt;string&gt;LaunchScreen&lt;/string&gt;
+	&lt;key&gt;UIRequiredDeviceCapabilities&lt;/key&gt;
+	&lt;array&gt;
+		&lt;string&gt;armv7&lt;/string&gt;
+	&lt;/array&gt;
+	&lt;key&gt;UIStatusBarStyle&lt;/key&gt;
+	&lt;string&gt;UIStatusBarStyleLightContent&lt;/string&gt;
+	&lt;key&gt;UISupportedInterfaceOrientations&lt;/key&gt;
+	&lt;array&gt;
+		&lt;string&gt;UIInterfaceOrientationPortrait&lt;/string&gt;
+	&lt;/array&gt;
+	&lt;key&gt;UISupportedInterfaceOrientations~ipad&lt;/key&gt;
+	&lt;array&gt;
+		&lt;string&gt;UIInterfaceOrientationPortrait&lt;/string&gt;
+		&lt;string&gt;UIInterfaceOrientationPortraitUpsideDown&lt;/string&gt;
+		&lt;string&gt;UIInterfaceOrientationLandscapeLeft&lt;/string&gt;
+		&lt;string&gt;UIInterfaceOrientationLandscapeRight&lt;/string&gt;
+	&lt;/array&gt;</string>
 		<key>../Podfile:swiftbasics</key>
 		<string># Uncomment the next line to define a global platform for your project
 platform :ios, &apos;10.0&apos;
@@ -183,15 +220,17 @@ end
 			<key>Path</key>
 			<string>👑 Application Layer/Resources/Assets/Assets.xcassets</string>
 		</dict>
-		<key>👑 Application Layer/Extensions/.keep</key>
+		<key>👑 Application Layer/Extensions/.gitkeep</key>
 		<dict>
+			<key>TargetIndices</key>
+			<array/>
 			<key>Group</key>
 			<array>
 				<string>👑 Application Layer</string>
 				<string>Extension</string>
 			</array>
 			<key>Path</key>
-			<string>👑 Application Layer/Extensions/.keep</string>
+			<string>.gitkeep</string>
 		</dict>
 		<key>👑 Application Layer/Resources/Fonts/Fira Sans/FiraSans-SemiBold.ttf</key>
 		<dict>
@@ -330,17 +369,6 @@ end
 			<key>Path</key>
 			<string>👑 Application Layer/Resources/Assets/AppAssets.swift</string>
 		</dict>
-		<key>👑 Application Layer/Info.plist</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>👑 Application Layer</string>
-			</array>
-			<key>Path</key>
-			<string>👑 Application Layer/Info.plist</string>
-			<key>TargetIndices</key>
-			<string></string>
-		</dict>
 		<key>👑 Application Layer/Localization/AppLocalization.swift</key>
 		<dict>
 			<key>Group</key>
@@ -351,30 +379,36 @@ end
 			<key>Path</key>
 			<string>👑 Application Layer/Localization/AppLocalization.swift</string>
 		</dict>
-		<key>🧠 Data Layer/Requests/.keep</key>
+		<key>🧠 Data Layer/Requests/.gitkeep</key>
 		<dict>
+			<key>TargetIndices</key>
+			<array/>
 			<key>Path</key>
-			<string>🧠 Data Layer/Requests/.keep</string>
+			<string>.gitkeep</string>
 			<key>Group</key>
 			<array>
 				<string>🧠 Data Layer</string>
 				<string>Requests</string>
 			</array>
 		</dict>
-		<key>🧠 Data Layer/Responses/.keep</key>
+		<key>🧠 Data Layer/Responses/.gitkeep</key>
 		<dict>
+			<key>TargetIndices</key>
+			<array/>
 			<key>Path</key>
-			<string>🧠 Data Layer/Responses/.keep</string>
+			<string>.gitkeep</string>
 			<key>Group</key>
 			<array>
 				<string>🧠 Data Layer</string>
 				<string>Responses</string>
 			</array>
 		</dict>
-		<key>🧠 Data Layer/Models/.keep</key>
+		<key>🧠 Data Layer/Models/.gitkeep</key>
 		<dict>
+			<key>TargetIndices</key>
+			<array/>
 			<key>Path</key>
-			<string>🧠 Data Layer/Models/.keep</string>
+			<string>.gitkeep</string>
 			<key>Group</key>
 			<array>
 				<string>🧠 Data Layer</string>
@@ -399,19 +433,23 @@ end
 				<string>🧠 Data Layer</string>
 			</array>
 		</dict>
-		<key>🧩 Domain Layer/.keep</key>
+		<key>🧩 Domain Layer/.gitkeep</key>
 		<dict>
+			<key>TargetIndices</key>
+			<array/>
 			<key>Path</key>
-			<string>🧩 Domain Layer/.keep</string>
+			<string>.gitkeep</string>
 			<key>Group</key>
 			<array>
 				<string>🧩 Domain Layer</string>
 			</array>
 		</dict>
-		<key>🌟 Presentation Layer/Components/Cells/.keep</key>
+		<key>🌟 Presentation Layer/Components/Cells/.gitkeep</key>
 		<dict>
+			<key>TargetIndices</key>
+			<array/>
 			<key>Path</key>
-			<string>🌟 Presentation Layer/Components/Cells/.keep</string>
+			<string>.gitkeep</string>
 			<key>Group</key>
 			<array>
 				<string>🌟 Presentation Layer</string>
@@ -419,10 +457,12 @@ end
 				<string>Cells</string>
 			</array>
 		</dict>
-		<key>🌟 Presentation Layer/Components/Custom/.keep</key>
+		<key>🌟 Presentation Layer/Components/Custom/.gitkeep</key>
 		<dict>
+			<key>TargetIndices</key>
+			<array/>
 			<key>Path</key>
-			<string>🌟 Presentation Layer/Components/Custom/.keep</string>
+			<string>.gitkeep</string>
 			<key>Group</key>
 			<array>
 				<string>🌟 Presentation Layer</string>
@@ -542,14 +582,16 @@ end
 				<string>Resources</string>
 			</array>
 		</dict>
-		<key>🤖 Service Layer/.keep</key>
+		<key>🤖 Service Layer/.gitkeep</key>
 		<dict>
+			<key>TargetIndices</key>
+			<array/>
 			<key>Group</key>
 			<array>
 				<string>🤖 Service Layer</string>
 			</array>
 			<key>Path</key>
-			<string>🤖 Service Layer/.keep</string>
+			<string>.gitkeep</string>
 		</dict>
 	</dict>
 </dict>

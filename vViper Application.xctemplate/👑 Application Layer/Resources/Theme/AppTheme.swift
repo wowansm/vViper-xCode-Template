@@ -7,7 +7,6 @@
 //
 
 import GKExtensions
-import ChameleonFramework
 
 enum AppTheme {
     

@@ -24,12 +24,12 @@ class InitialRouter: ViperRouter, InitialRouterInput {
     
     // MARK: - InitialRouterInput
     func presentMainViewController() {
-        let vc = MainAssembly.create()
-        _ = MainAssembly.configure(with: vc)
-        
-        vc.modalPresentationStyle = .fullScreen
-        
-        self.present(vc, animated: false)
+//        let vc = MainAssembly.create()
+//        _ = MainAssembly.configure(with: vc)
+//
+//        vc.modalPresentationStyle = .fullScreen
+//
+//        self.present(vc, animated: false)
     }
     
     // MARK: - Module functions

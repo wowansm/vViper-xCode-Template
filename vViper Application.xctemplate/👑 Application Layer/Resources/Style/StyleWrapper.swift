@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ChameleonFramework
 
 typealias Style<Element> = (Element) -> Void
 
@@ -19,7 +18,7 @@ extension StyleWrapper where Element: UIView {
     
     static func backgroundViewStyle() -> StyleWrapper {
         return .wrap { view in
-            view.backgroundColor = GradientColor(.topToBottom, frame: view.bounds, colors: AppTheme.backgroundMain)
+            view.backgroundColor = .red
         }
     }
     
