@@ -22,3 +22,4 @@ Select vViper Application
 
 ##### Don't forget run `pod install` after create project
 
+Please leave feedbacks and write how you would like to improve the template
